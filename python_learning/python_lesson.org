@@ -1,0 +1,119 @@
+#+TITLE: python_lesson
+#+AUTHOR: Julia Rzymowska
+#+DATE: Wednesday, October 16, 2024
+
+#+begin_src python :results output
+for i in range(10):
+    print(i**2)
+
+x = 2.5
+
+y = x
+
+lista = [1,2,3]
+
+x = x+y
+
+print(x,y)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+5.0 2.5
+#+end_example
+
+
+#+begin_src python :results output
+from copy import copy
+
+x = 2.5
+
+y = x
+
+lista = [1,2,3]
+
+x = x+y
+
+lista2 = copy(lista)
+
+lista.append(1)
+
+print(lista,lista2)
+#+end_src
+
+#+RESULTS:
+: [1, 2, 3, 1] [1, 2, 3]
+
+#+begin_src python :results output
+from copy import copy
+
+x = True
+y = False
+
+def funkcja1(x,y,z):
+    return x+y+z
+
+def wyswietl(napis):
+    napis+="XD"
+    print(napis)
+
+def wyswietlLiczbe(liczba):
+    liczba+=1000000
+    print(liczba)
+
+x2=1123
+
+print(funkcja1(1,2,3))
+wyswietlLiczbe(12)
+wyswietlLiczbe(x2)
+wyswietl("siema12")
+#+end_src
+
+#+RESULTS:
+: 6
+: 1000012
+: 1001123
+: siema12XD
+
+#+begin_src python
+lista = []
+for i in range(5):
+    a = int(input("Podaj liczbe: "))
+    lista.insert(i,a)
+suma = 0
+for x in range(len(lista)):
+    suma+=lista[x]
+print(suma)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src python :results output
+lista = []
+for i in range(5):
+    lista.append(i)
+    #lista.append(int(input("Podaj liczbe: ")))
+print(sum(lista))
+#+end_src
+
+#+RESULTS:
+: 10
+
+
+#+begin_src python :results output
+print("Hello world!\n")
+#+end_src
+
+#+RESULTS:
+: Hello world!
+:

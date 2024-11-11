@@ -1,5 +1,3 @@
-from math import sqrt
-
 def prime_factorization(number : int) -> None:
     i = 2
 

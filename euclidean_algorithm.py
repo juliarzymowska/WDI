@@ -1,10 +1,10 @@
 def gcd(num1 : int, num2 : int) -> int:
-    temp = None
+    temp = None #pom
 
     while num2 > 0:
-        temp = num2
-        num2 = num1 % num2
-        num1 = temp
+        temp = num2 # pom = b
+        num2 = num1 % num2 # b = a%b
+        num1 = temp # a = pom
     #end while
 
     return num1

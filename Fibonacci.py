@@ -1,6 +1,3 @@
-from unittest.mock import numerics
-
-
 def fibonacci_list(number : int) -> list:
     fib = [0 for _ in range(number+1)]
     fib[0] = fib[1] = 1 # 0 and 1 equals 1

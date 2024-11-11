@@ -1,6 +1,6 @@
 from math import sqrt
 
-def sieve(n : int):
+def sieve(n : int) -> list:
     primes = [True for _ in range(n+1)] # ustawioamy wszystkie liczby jako pierwsze
     primes[0] = primes[1] = False # 0 i 1 to nie są liczby pierwsze
     ans = 0
@@ -12,7 +12,7 @@ def sieve(n : int):
         #end if
     #end for
 
-    return primes
+    return [i for i in range(n+1) if primes[i]]
 
 def main():
     #T = int(input())
