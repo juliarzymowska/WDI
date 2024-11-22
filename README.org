@@ -1,0 +1,12 @@
+#+TITLE: Python algorithms and WDI exercise solutions
+#+AUTHOR: Julia Rzymowska
+#+DATE: <2024-11-17 Sun>
+#+STARTUP: showall
+
+* lesson_programs
+Contains solutions to WDI_exercise.pdf
+* python_learning
+One coursebook and some simple programs as introduction.
+** TODO complete python_learning
+* algorithms
+Contains algorithms written in Python

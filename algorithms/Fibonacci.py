@@ -35,9 +35,9 @@ def main():
 
     print("Fibonacci list:", fibonacci_list(n), end = '\n\n')
 
-    print("Fibonacci no list:")
-    fibonacci_no_list(n)
+    #print("Fibonacci no list:")
+    #fibonacci_no_list(n)
 
-    print("Fibonacci recursion:", fibonacci_recursion(n), end = '\n')
+    #print("Fibonacci recursion:", fibonacci_recursion(n), end = '\n')
 
 main()
