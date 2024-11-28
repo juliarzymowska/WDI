@@ -27,7 +27,9 @@ def waga(t, n, p=0,
 	waga(t, n - t[p], p + 1, r + [t[p]])
 	waga(t, n, p + 1, r)
 	waga(t, n + t[p], p + 1, r + [-t[p]])
-	# r+[t[p]] - dodawanie listy, bo .append() dodaje jakby na "stałe", a tak to w przypadku nawrotu nie ma problemu
+
+
+# r+[t[p]] - dodawanie listy, bo .append() dodaje jakby na "stałe", a tak to w przypadku nawrotu nie ma problemu
 
 
 def main():
@@ -36,8 +38,10 @@ def main():
 	
 	# print(odwazniki_rekurencyjnie_obie_szalki(t, n))
 	print(waga(t, 23))
-	# print(waga([1, 3, 9, 27], 23))
-	# print(waga([1,3,9,27,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 23))
+
+
+# print(waga([1, 3, 9, 27], 23))
+# print(waga([1,3,9,27,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], 23))
 
 
 main()

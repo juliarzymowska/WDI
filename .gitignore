@@ -1,5 +1,5 @@
 #exclude full .idea path
-.idea/
+**/.idea/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
