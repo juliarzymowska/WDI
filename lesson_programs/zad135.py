@@ -27,9 +27,24 @@ def wersja2(t, w, k):
 	return min(wersja2(t, w + 1, k), wersja2(t, w + 1, k + 1), wersja2(t, w + 1, k - 1)) + t[w][k]
 
 
+def wersja3(t, w, k, d):  # rekurencja ze spamiętywaniem/tablicowaniem
+	# d jako slownik
+	if (w, k) in d.keys():
+		return t[w, k]
+	
+	if k < 0 or k == 8:
+		return float('inf')
+	
+	if w == 7:
+		return t[7][k]
+	
+	d[w][k] = min(wersja2(t, w + 1, k), wersja2(t, w + 1, k + 1), wersja2(t, w + 1, k - 1)) + t[w][k]
+	return d[w][k]
+
+
 def main():
 	t = [[random.randint(1, 5) for _ in range(8)] for _ in range(8)]
-	
+	d = {}
 	print(wersja1(t, 0, 0, t[0][0]))
 	print(wersja2(t, 0, 0))
 

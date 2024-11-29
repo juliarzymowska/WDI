@@ -1,21 +1,34 @@
-n = 7
+def find_partitions(n, max_part=None):
+    """
+    Znajduje wszystkie możliwe podziały liczby n na sumę składników.
 
-t = [[1 for _ in range(n)] for _ in range(n)]
+    :param n: Liczba naturalna do podziału.
+    :param max_part: Maksymalna wartość składnika w bieżącym kroku (dla porządku nierosnącego).
+    :return: Lista list, gdzie każda podlista to jeden podział.
+    """
+    if n == 0:
+        return [[]]  # Pusty podział dla liczby 0.
+    if max_part is None:
+        max_part = n
+    
+    partitions = []
+    for i in range(min(max_part, n), 0, -1):  # Iterujemy od największego możliwego składnika.
+        for sub_partition in find_partitions(n - i, i):  # Rekurencja z pomniejszoną liczbą i mniejszym max_part.
+            partitions.append([i] + sub_partition)
+    return partitions
 
-ind = 0 #indentation
 
-while ind <= n//2:
-    for i in range(0+ind,n-ind): #wiersz 0, kolumna i
-        if not(i == 0 and ind == 0):
-            t[0+ind][i] = t[0+ind][i-1] + 1
-    for i in range(1+ind,n-ind): #wiersz i, kolumna n-2
-        t[i][n-1-ind] = t[i-1][n-1-ind] + 1
-    for i in range(n-2-ind, -1+ind, -1): #wiersz n-2, kolumna i
-        t[n-1-ind][i] = t[n-1-ind][i+1] + 1
-    for i in range(n-2-ind, 0+ind, -1): # kolumna 0, wiersz i
-        t[i][0+ind] = t[i+1][0+ind] + 1
+def print_partitions(n):
+    """
+    Wypisuje wszystkie podziały liczby n w postaci sum składników.
 
-    ind += 1
+    :param n: Liczba naturalna.
+    """
+    partitions = find_partitions(n)
+    for partition in partitions:
+        print(" + ".join(map(str, partition)))
 
-for wiersz in t:
-    print(wiersz)
+
+# Przykład użycia
+n = 6
+print_partitions(n)

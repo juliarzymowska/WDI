@@ -1,0 +1,50 @@
+#+TITLE:
+#+AUTHOR: Julia Rzymowska
+#+DATE: Thursday, November 14, 2024
+
+
+* TODO [[pdf:~/Documents/Sync/AGH/f24/WDI/WDI_exercises.pdf::10][zad117]]
+Zmiana treści na tylko poziomo i malejąco.
+
+
+#+begin_src python :results output
+t = [[1,2,3] [4,5,6] [7,8,9]]
+
+def zad117(t : list):
+   n = len(t)
+   max_l = 0 #max length ciagu fib
+
+   for i in range(n-2): #n-1, bo ciag bedzie krotszy niz co najmniej 3
+       for j in range(n-2): #n-2, bo ciag bedzie krotszy niz co najmniej 3
+           #szybciej sprawdzić czy 2 kolejne sa suma niz czy t[i][j] nalezy do fibonacciego
+
+           # sprawdzanie malejąco
+           first = t[i][j]
+           second = t[i+1][j+1]
+           third = t[i+2][j+2]
+           if first <= second and third == first + second and fib(first, second):
+                max_l = 3
+                while i+3 < n and j+3 < n: #żeby nie wyjść poza rozmiar tablicy
+                   first, second, third = second, third, t[i+3][j+3]
+                   i += 1
+                   j += 1
+                   if third != first + second:
+                        return max_l
+                   max_l += 1
+                # end while
+                return max_l
+
+def fib(x : int, y : int): #sprawdzanie czy first i second to liczby fibonacciego
+   a, b = 0, 1
+   while a < x:
+      if a == x and b == y:
+         return True
+      else:
+         a, b = b, a+b
+   return False
+def main():
+    #n = int(input())
+    #zad117()
+#+end_src
+
+#+RESULTS:

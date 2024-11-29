@@ -24,6 +24,12 @@ def zad167(word):
 	suma = 0
 	
 	for k in range(pos[0], pos[1] + 1):
-		suma += zad167(word[k:])
+		suma += zad167(word[k+1:])
 	
 	return suma
+
+def main():
+	word = input()
+	print(zad167(word))
+	
+main()
