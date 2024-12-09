@@ -1,4 +1,9 @@
-#exclude full .idea path
+# exclude python_learning unnecessary stuff
+python_learning/**.py
+ 
+# exclude test.py
+**/test.py
+# exclude full .idea path
 **/.idea/**
 
 # Byte-compiled / optimized / DLL files
