@@ -1,4 +1,4 @@
-#ja bym to zrobiła inaczej lol
+# ja bym to zrobiła inaczej lol
 
 
 # można używać tablic, zakładamy że a < b
@@ -80,46 +80,48 @@ b = int(input("Podaj mianownik (liczbę naturalną): "))
 print("Rozwinięcie dziesiętne ułamka:", rozwinięcie_dziesiętne(a, b))
 '''
 
-def fractorial_expansion() :
+
+def fractorial_expansion():
     a = int(input())
     b = int(input())
 
-    czesc_calkowita = str(a//b)
+    czesc_calkowita = str(a // b)
     wynik = czesc_calkowita + "."
 
-    reszta = a%b
-    zbior_reszt = [-1 for _ in range(b+1)] # maksymalna długość okresu wynosi b
+    reszta = a % b
+    zbior_reszt = [-1 for _ in range(b + 1)]  # maksymalna długość okresu wynosi b
     czesc_ulamkowa = ''
-    i = 0 #pozycja w tablicy zbior_reszt
+    i = 0  # pozycja w tablicy zbior_reszt
 
     while reszta != 0:
         if reszta in zbior_reszt:
             j = 0
             while zbior_reszt[j] != reszta:
                 j += 1
-            #end while
+            # end while
 
             czesc_ulamkowa = str(
                 czesc_ulamkowa[:j] + '(' + czesc_ulamkowa[j:] + ')'
             )
-            #print(czesc_ulamkowa[j:], end = '\n')
+            # print(czesc_ulamkowa[j:], end = '\n')
             break
-        #end if
+        # end if
 
-        zbior_reszt[i] = reszta #zapisujemy reszte do tablicy reszt
+        zbior_reszt[i] = reszta  # zapisujemy reszte do tablicy reszt
 
-        while reszta < b: #zwiekszamy tak dlugo az reszta bedzie > b
+        while reszta < b:  # zwiekszamy tak dlugo az reszta bedzie > b
             reszta *= 10
-        #end while
+        # end while
 
-        cyfra = reszta // b # cyfra, ktora dodajemy do czesci ulamkowej
+        cyfra = reszta // b  # cyfra, ktora dodajemy do czesci ulamkowej
         czesc_ulamkowa += str(cyfra)
-        reszta %= b #wyznaczamy kolejna reszte
-        #print(zbior_reszt[i], end = '\n')
+        reszta %= b  # wyznaczamy kolejna reszte
+        # print(zbior_reszt[i], end = '\n')
         i += 1
-    #end while
+    # end while
 
     wynik += czesc_ulamkowa
     return wynik
+
 
 print(fractorial_expansion())

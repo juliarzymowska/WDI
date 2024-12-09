@@ -1,27 +1,36 @@
 import random
-from math import log10
+
+ans = []
 
 
 def is_prime(number: int):
-	if number < 2:
-		return False
-	i = 2
-	while i * i <= number:
-		if number % i == 0:
-			return False
-		i += 1
-	return True
+    if number < 2:
+        return False
+    i = 2
+    while i * i <= number:
+        if number % i == 0:
+            return False
+        i += 1
+    return True
 
 
-def z133(number: int):
-	if int(log10(number)) + 1 >= 3:
-	
-	
-	else:
-		return None
+def zad133(number: str):
+    global ans
+    # print(number)
+
+    if len(number) > 1 and is_prime(int(number)) and number not in ans:
+        print(number)
+        ans.append(number)
+
+    for i in range(len(number)):
+        zad133(number[:i] + number[i + 1:])
 
 
 def main():
-	n = random.randint(1, 10000)
-	print("N:", n)
-	print(z133(n))
+    n = random.randint(1, 100000)
+    # n = 1511
+    print("N:", n)
+    zad133(str(n))
+
+
+main()

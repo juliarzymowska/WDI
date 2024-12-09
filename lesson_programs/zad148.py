@@ -9,7 +9,7 @@ def hetman(t: list, x=0, p1=[], p2=[], k=[]):
             k[i] = True
             p1[x + 1] = True
             p2[x - i] = True
-            hetman(t, x + 1, p1, p2, k) # jeśli dla wszystkich kombinacji return
+            hetman(t, x + 1, p1, p2, k)  # jeśli dla wszystkich kombinacji return
             k[i] = p1[x + i] = p2[x - i] = False
 
 

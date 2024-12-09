@@ -1,17 +1,18 @@
-#https://www.spoj.com/CMI2020/status/CMI_01_42,juliarzymowska/ - do zrobienia a'la bfs'em
+# https://www.spoj.com/CMI2020/status/CMI_01_42,juliarzymowska/ - do zrobienia a'la bfs'em
 
-def skoczek(T, k, w, length): #tablica, kolumna, wiersz, długość drogi
+def skoczek(T, k, w, length):  # tablica, kolumna, wiersz, długość drogi
     if w == len(T):
         return length
 
-    if T[w+2][k+1] == 0 and w+2 < len(T) and k+1 < len(T):
-        skoczek(T, k+1, w+2, length+1)
-    elif T[w+2][k-1] == 0 and w+2 < len(T) and k-1 >= 0:
-        skoczek(T, k-1, w+2, length+1)
-    elif T[w+1][k+2] == 0 and w+1 < len(T) and k+2 < len(T):
-        skoczek(T, k+2, w+1, length+1)
-    elif T[w+1][k-2] == 0 and w+1 < len(T) and k-2 >=0:
-        skoczek(T, k-2, w+1, length+1)
+    if T[w + 2][k + 1] == 0 and w + 2 < len(T) and k + 1 < len(T):
+        skoczek(T, k + 1, w + 2, length + 1)
+    elif T[w + 2][k - 1] == 0 and w + 2 < len(T) and k - 1 >= 0:
+        skoczek(T, k - 1, w + 2, length + 1)
+    elif T[w + 1][k + 2] == 0 and w + 1 < len(T) and k + 2 < len(T):
+        skoczek(T, k + 2, w + 1, length + 1)
+    elif T[w + 1][k - 2] == 0 and w + 1 < len(T) and k - 2 >= 0:
+        skoczek(T, k - 2, w + 1, length + 1)
+
 
 def zad112(T):
     l = len(T)
@@ -23,9 +24,11 @@ def zad112(T):
 
     return ans
 
+
 def main():
-    T = [(0,0), (0,0), (0,0), (0,0)] #najpierw wiersz potem kolumna, rozmiar NxN
+    T = [(0, 0), (0, 0), (0, 0), (0, 0)]  # najpierw wiersz potem kolumna, rozmiar NxN
     print(zad112(T))
+
 
 main()
 '''

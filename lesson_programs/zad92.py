@@ -1,9 +1,9 @@
-def my_function(n : int):
+def my_function(n: int):
     t = [[1 for _ in range(n)] for _ in range(n)]
 
     ind = 0  # indentation
 
-    while ind <= n//2:
+    while ind <= n // 2:
         for i in range(0 + ind, n - ind):  # wiersz 0, kolumna i
             if not (i == 0 and ind == 0):
                 t[0 + ind][i] = t[0 + ind][i - 1] + 1
@@ -18,8 +18,10 @@ def my_function(n : int):
     for row in t:
         print(row)
 
+
 def main():
     my_function(int(input()))
+
 
 main()
 

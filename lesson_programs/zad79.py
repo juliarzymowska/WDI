@@ -1,4 +1,6 @@
 from math import sqrt
+
+
 def dlpodciagu(T):
     n = len(T)
     lmax = 0  # długosć najdłuższego podciagu
@@ -21,12 +23,12 @@ def dlpodciagu(T):
                 dz += 1
             if b:
                 l += 1
-                lmax = max(l, lmax )
+                lmax = max(l, lmax)
             else:
                 break
-        #break
+        # break
         return lmax
 
 
-print(dlpodciagu([2,23,33,35,7,4,6,7,5,11,13,22]))
-#dlpodciagu([2, 23, 33, 35, 7, 4, 6, 7, 5, 11, 13, 22])
+print(dlpodciagu([2, 23, 33, 35, 7, 4, 6, 7, 5, 11, 13, 22]))
+# dlpodciagu([2, 23, 33, 35, 7, 4, 6, 7, 5, 11, 13, 22])

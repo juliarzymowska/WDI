@@ -7,16 +7,18 @@ def zajecia():
         if x == 0:
             break
         if x > tab[0]:
-           i = 0
-           while i < 9 and tab[i] < x:
-               tab[i] = tab[i+1]
-               i += 1
-           if tab[9] < x:
-               tab[9] = x
-           else:
-               tab[i-1] = x
-                
+            i = 0
+            while i < 9 and tab[i] < x:
+                tab[i] = tab[i + 1]
+                i += 1
+            if tab[9] < x:
+                tab[9] = x
+            else:
+                tab[i - 1] = x
+
     print(tab[0])
+
+
 '''
 def moja(): # źle, bo tylko dla cyfr, a tu chodzi o liczby naturalne
     Tab = [0 for _ in range(10)]
@@ -37,12 +39,14 @@ def moja(): # źle, bo tylko dla cyfr, a tu chodzi o liczby naturalne
             print(i)
             break
 '''
-#zajecia()
+
+
+# zajecia()
 
 def moja_poprawiona():
-
-    tab = [-1 for _ in range(10)] #wypełniamy tablice -1, bo to nie jest liczba naturalna, więc wtedy wiemy czy wstawiliśmy już na tym indeksie jakąś liczbę
-    #print(tab, end='\n')
+    tab = [-1 for _ in range(
+        10)]  # wypełniamy tablice -1, bo to nie jest liczba naturalna, więc wtedy wiemy czy wstawiliśmy już na tym indeksie jakąś liczbę
+    # print(tab, end='\n')
 
     while True:
         a = int(input())
@@ -54,13 +58,15 @@ def moja_poprawiona():
             if tab[i] < a:
                 if tab[i] != -1:
                     for j in range(9, i, -1):
-                        tab[j] = tab[j-1]
+                        tab[j] = tab[j - 1]
                 tab[i] = a
                 break
 
-        #print(f"{tab}", end='\n')
+        # print(f"{tab}", end='\n')
 
-    return tab[9] #zwracamy ostatni indeks tablicy, bo sortujemy rosnąco, zatem 10 co do wielkości wartość jest na ostatnim indeksie tablicy
+    return tab[
+        9]  # zwracamy ostatni indeks tablicy, bo sortujemy rosnąco, zatem 10 co do wielkości wartość jest na ostatnim indeksie tablicy
+
 
 print(moja_poprawiona())
-#moja_poprawiona()
+# moja_poprawiona()

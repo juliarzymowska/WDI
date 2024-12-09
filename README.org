@@ -3,10 +3,18 @@
 #+DATE: <2024-11-17 Sun>
 #+STARTUP: showall
 
-* lesson_programs
+** lesson_programs
 Contains solutions to WDI_exercise.pdf
-* python_learning
+** lesson_notes
+Some notes to exercises
+**** TODO complete notes
+** python_learning
 One coursebook and some simple programs as introduction.
-** TODO complete python_learning
-* algorithms
+**** TODO complete python_learning
+** algorithms
 Contains algorithms written in Python
+** WDI_exercise
+yellow - in-progress / TODO
+blue - done in classroom
+orchid - done by myself
+squiggly light salmon - bit wdi

@@ -6,8 +6,8 @@ def fun(a, b):
         a //= 2
 
     while b > 0:
-       tab[b % 10] -= 1
-       b //= 2
+        tab[b % 10] -= 1
+        b //= 2
 
     for i in range(10):
         if tab[i] != 0:
@@ -18,4 +18,4 @@ def fun(a, b):
 A = int(input())
 B = int(input())
 
-print(fun(A,B))
+print(fun(A, B))

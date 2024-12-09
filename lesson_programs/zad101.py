@@ -1,7 +1,8 @@
 from math import log10
 
+
 def zad101(T):
-    l = len(T) # to samo co len(T[0]) - liczba kolumn, bo macierz jest kwadratowa
+    l = len(T)  # to samo co len(T[0]) - liczba kolumn, bo macierz jest kwadratowa
     # len(T) - liczba wierszy
 
     wiersze = [False for _ in range(l)]
@@ -19,8 +20,10 @@ def zad101(T):
             return False
     return True
 
+
 def main():
     T = []
     print(zad101(T))
+
 
 main()
