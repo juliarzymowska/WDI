@@ -1,45 +1,39 @@
 import random
 
+cnt = 0
 
-# ans = 0
 
+def is_prime(number: int):
+    if number < 2:
+        return False
 
-def czy_zlozona(number):
+    i = 2
+    while i * i <= number:
+        if number % i == 0:
+            return False
+        i += 1
+
     return True
 
 
-def zad159(A, B, number):
-    # global ans
-    # nonlocal ans
+def test(number: int, a: int, b: int, i: int):  # i - index of ans
+    global cnt
+    if a == b == 0 and not is_prime(number):
+        cnt += 1
 
-    if A == 0 and B == 0:
-        if not czy_zlozona(number):
-            # ans += 1
-            return 1
-        return 0
-    else:
-        # p1 = p2 = 0
-        x = 0
-        if A > 0:
-            # p1 = zad159(A - 1, B, number * 2 + 1)
-            x += zad159(A - 1, B, number * 2 + 1)
-        if B > 0:
-            # p2 = zad159(A, B - 1, number * 2)
-            x += zad159(A, B - 1, number * 2)
+    if a > 0:
+        test(number + 2 ** i, a - 1, b, i - 1)
+    if b > 0:
+        test(number, a, b - 1, i - 1)
 
-    return x
-
-
-# return ans
-# return p1 + p2
 
 def main():
-    ans = 0
-    A = random.randint(1, 5)
-    B = random.randint(1, 5)
-    zad159(A - 1, B, 1)
-    # print(ans)
-    return ans
+    a = random.randint(1, 3)  # number of 1
+    b = random.randint(1, 3)  # number of 0
+
+    print(f"a: {a}, b: {b}")
+    test(2 ** (a + b - 1), a - 1, b, a + b - 2)  # a-1, because the oldest bit has to be == 1, so ans == 2**(a+b-1)
+    print(cnt)
 
 
 main()

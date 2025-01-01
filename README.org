@@ -7,14 +7,7 @@
 Contains solutions to WDI_exercise.pdf
 ** lesson_notes
 Some notes to exercises
-**** TODO complete notes
 ** python_learning
 One coursebook and some simple programs as introduction.
-**** TODO complete python_learning
 ** algorithms
-Contains algorithms written in Python
-** WDI_exercise
-yellow - in-progress / TODO
-blue - done in classroom
-orchid - done by myself
-squiggly light salmon - bit wdi
+Contains basic algorithms written in Python

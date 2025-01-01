@@ -1,0 +1,12 @@
+#+AUTHOR: Julia Rzymowska
+#+DATE:<2024-12-13 Fri>
+
+* class w pythonie
+class - klasa w pythonie
+__init__ - inicjowanie(?) siebie, next element to None i dane dla danego wierzchołka to dane z wejścia
+#+begin_src python
+class Node:
+    def __init__ (self,data):
+        self.next=None
+        self.data=data
+#+end_src
