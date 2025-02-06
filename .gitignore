@@ -1,5 +1,7 @@
 # exclude python_learning unnecessary stuff
 python_learning/**.py
+egzamin*
+wdi_sesja*
  
 # exclude test.py
 **/test.py
